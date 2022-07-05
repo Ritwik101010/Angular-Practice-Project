@@ -23,6 +23,7 @@ export class ServingComponent implements OnInit {
   firstName = 'UserName';
   serverCreated=false
   servers=['TestServer','TestServer 2']
+  secretPassword='Hello'
   constructor() {
     setTimeout(() => {
       this.allowNewServer = true;
@@ -43,5 +44,9 @@ export class ServingComponent implements OnInit {
 
   onUpdateServerName(event: Event) {
     this.serverName = (<HTMLInputElement>event.target).value;
+  }
+
+  getParagraph(){
+    return this.secretPassword='Your Secret Password is' + this.secretPassword
   }
 }
