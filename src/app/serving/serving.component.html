@@ -4,7 +4,7 @@
 <!-- <p>{{ serverName }}</p> -->
 
 <!-- button.btn.btn-primary -->
-<!-- <button
+ <button
   class="btn btn-primary"
   [disabled]="!allowNewServer"
   (click)="onCreateServer()"
@@ -21,5 +21,7 @@
 <p>{{ firstName }}</p>
 
 <button class="btn btn-primary" [disabled]="!firstName" (click)="onCreateEmptyString()">Click Here</button>
+<p *ngIf="serverCreated; else noServer">Server was Created, Server Name is {{serverName}}</p>
+<ng-template #noServer><p>No Server Was Created</p></ng-template>
 
-<app-server></app-server>
+<app-server *ngFor="let server of servers"></app-server>
